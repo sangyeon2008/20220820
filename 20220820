@@ -1,0 +1,24 @@
+def solution(citations):
+    answer = 0
+    citations.sort()
+
+    for h in range(1,len(citations)+1):
+        cnt_h = 0
+        cnt_l = 0
+        for i in citations:
+            if i >= h:
+                cnt_h += 1
+            elif i <= h:
+                cnt_l += 1
+            if cnt_h and cnt_l <= h and answer <h:
+                answer = h
+
+
+
+
+
+
+
+    return answer
+c= [3, 0, 6, 1, 5]
+print(solution(c))
